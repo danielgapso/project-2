@@ -1,0 +1,29 @@
+.header {
+    background-color: gainsboro;
+    height: 140px;
+    width:100%;
+    padding-top:10px;
+    border-bottom: 2px solid black;
+    background-image: url(/img/cryptonite.jpg);
+    background-repeat:no-repeat;
+    background-size: 150px;
+    background-position-x: right;
+    background-position-y: 20px;
+}
+.navbarWrap{
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+}
+.searchWrap{
+    margin-left: 170px;
+}
+#container{
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+
+
+
