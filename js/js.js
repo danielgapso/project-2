@@ -1,8 +1,7 @@
 //const coinUrl = "https://api.coingecko.com/api/v3/coins/list";
-const infoUrl="https://api.coingecko.com/api/v3/coins/";
+//const infoUrl="https://api.coingecko.com/api/v3/coins/";
 
 let allcoins = [];
-
 
 $(async () => {
   $.get(infoUrl).done(function (data) {
@@ -13,7 +12,10 @@ $(async () => {
 
 const getData = () => {
   $("#container").html("");
-  for (let counter = 0; counter < 50; counter++) {
+  for (let counter = 0; counter < allcoins.length; counter++) {
+    let coinId = allcoins[counter].id;
+    let modalId = `modal-${coinId}`;
+
     $("#container").append(`
     <div class="Box">
     <div class="card" style="width: 18rem">
@@ -24,7 +26,7 @@ const getData = () => {
           type="button"
           class="btn btn-primary"
           data-bs-toggle="modal"
-          data-bs-target="#exampleModal"
+          data-bs-target="#${modalId}"
         >
           more info
         </button>
@@ -33,7 +35,7 @@ const getData = () => {
   </div>
   <div
     class="modal fade"
-    id="exampleModal"
+    id="${modalId}"
     tabindex="-1"
     aria-labelledby="exampleModalLabel"
     aria-hidden="true"
@@ -70,4 +72,5 @@ const getData = () => {
   </div>
   `);
 }};
+
 
