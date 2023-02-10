@@ -2,9 +2,9 @@
     background-color: gainsboro;
     height: 140px;
     width:100%;
-    padding-top:10px;
+    padding-top:20px;
     border-bottom: 2px solid black;
-    background-image: url(/img/cryptonite.jpg);
+    background-image: url(/img/cryptowolf.jpg);
     background-repeat:no-repeat;
     background-size: 150px;
     background-position-x: right;
@@ -23,7 +23,19 @@
     flex-wrap: wrap;
     margin: auto;
 }
-
-
-
+.parallax {
+    
+    background-image: url(/img/cryptoparallaxscroll.jpg);
+    min-height: 400px; 
+  
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+@media only screen and (max-device-width: 1366px) {
+    .parallax {
+      background-attachment: scroll;
+    }
+  }
 
