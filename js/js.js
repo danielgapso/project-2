@@ -1,16 +1,3 @@
-const coinUrl = "https://api.coingecko.com/api/v3/coins/list";
-const infoUrl = "https://api.coingecko.com/api/v3/coins/{id}";
-
-let allCoins = [];
-let allCoinsInfo = [];
-
-$(document).ready(function () {
-  $.get(coinUrl).done(function (data) {
-    allCoins = data;
-    getData();
-  });
-});
-
 const getData = () => {
   $("#container").html("");
   for (let counter = 0; counter < 100; counter++) {
@@ -39,15 +26,6 @@ const getData = () => {
       </div>
   `);
   }
-};
-
-const getCoinInfo = (id) => {
-  const url = infoUrl.replace("{id}", id);
-  $("#coinInfo-" + id).html("");
-  $.get(url, function (data) {
-    allCoinsInfo = data;
-    printinfo(id, data);
-  });
 };
 
 const printinfo = (id, data) => {
