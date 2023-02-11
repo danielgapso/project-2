@@ -43,6 +43,7 @@ const getData = () => {
 
 const getCoinInfo = (id) => {
   const url = infoUrl.replace("{id}", id);
+  $("#coinInfo-" + id).html("");
   $.get(url, function (data) {
     allCoinsInfo = data;
     printinfo(id, data);
@@ -50,21 +51,20 @@ const getCoinInfo = (id) => {
 };
 
 const printinfo = (id, data) => {
- 
   $("#coinInfo-" + id).append(`
         <div>
-          <img src=${data.image.thumb} width=100/><br/>
+          <img src=${allCoinsInfo.image.thumb} width=100/><br/>
           <h5 class="card-text">coin name ${data.name}</h5>
           <p class="card-text">
             price in dollars
-            ${data.market_data.current_price.usd}$
+            ${allCoinsInfo.market_data.current_price.usd}$
           </p>
           <p class="card-text">
-            price in euros ${data.market_data.current_price.eur}€
+            price in euros ${allCoinsInfo.market_data.current_price.eur}€
           </p>
           <p class="card-text">
             price in
-            shekels ${data.market_data.current_price.ils}₪
+            shekels ${allCoinsInfo.market_data.current_price.ils}₪
           </p>
         </div>
       </div>
