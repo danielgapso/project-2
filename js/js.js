@@ -1,76 +1,80 @@
-//const coinUrl = "https://api.coingecko.com/api/v3/coins/list";
-//const infoUrl="https://api.coingecko.com/api/v3/coins/";
+const coinUrl = "https://api.coingecko.com/api/v3/coins/list";
+const infoUrl = "https://api.coingecko.com/api/v3/coins/{id}";
 
-let allcoins = [];
+let allCoins = [];
+let allCoinsInfo=[];
 
-$(async () => {
-  $.get(infoUrl).done(function (data) {
-    allcoins = data;
+$(document).ready(function () {
+  $.get(coinUrl).done(function (data) {
+    allCoins = data;
     getData();
   });
 });
 
+
 const getData = () => {
   $("#container").html("");
-  for (let counter = 0; counter < allcoins.length; counter++) {
-    let coinId = allcoins[counter].id;
-    let modalId = `modal-${coinId}`;
-
+  for (let counter = 0; counter < 100; counter++) {
     $("#container").append(`
-    <div class="Box">
+    <div class="Box" id="box-${counter}-${allCoins[counter].id}">
     <div class="card" style="width: 18rem">
       <div class="card-body">
-        <h5 class="card-title">${allcoins[counter].symbol}</h5>
-        <p class="card-text">${allcoins[counter].id}</p>
-        <button
-          type="button"
-          class="btn btn-primary"
-          data-bs-toggle="modal"
-          data-bs-target="#${modalId}"
-        >
+        <div class="form-check form-switch" id="addSwitch">
+          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+          <label class="form-check-label mb-3" for="flexSwitchCheckDefault">add to watch list</label>
+        </div>
+        <h5 class="card-title">${allCoins[counter].symbol}</h5>
+        <p class="card-text">${allCoins[counter].id}</p>
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" 
+        data-bs-target="#collapseExample-${counter}-${allCoins[counter].id}"
+        onclick="getCoinInfo('${allCoins[counter].id}', '#collapseExample-${counter}-${allCoins[counter].id}')" 
+        aria-expanded="false"
+        aria-controls="collapseExample-${counter}-${allCoins[counter].id}">
           more info
         </button>
-      </div>
-    </div>
-  </div>
-  <div
-    class="modal fade"
-    id="${modalId}"
-    tabindex="-1"
-    aria-labelledby="exampleModalLabel"
-    aria-hidden="true"
-  >
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">more info</h5>
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="modal"
-            aria-label="Close"
-          ></button>
-        </div>
-        <div class="modal-body">
-          <h5 class="card-text">coin name ${allcoins[counter].name}</h5>
-          <img src=${allcoins[counter].image.thumb} width=100/><br/>
-        </p>
-          <p class="card-text">
-            price in dollars
-            ${allcoins[counter].market_data.current_price.usd}$
-          </p>
-          <p class="card-text">
-            price in euros ${allcoins[counter].market_data.current_price.eur}€
-          </p>
-          <p class="card-text">
-            price in
-            shekels${allcoins[counter].market_data.current_price.ils}₪
-          </p>
+        <div class="collapse" id="collapseExample-${counter}-${allCoins[counter].id}">
+          <div class="card card-body">
+            <div id="coinInfo-${allCoins[counter].id}"></div>
+          </div>
         </div>
       </div>
     </div>
   </div>
   `);
-}};
+  }};
 
+  const getCoinInfo = (id, target) => {
+    const url = infoUrl.replace("{id}", id);
+    $.get(url, function(data) {
+      allCoinsInfo = data;
+      console.log("data: ", data);
+      printinfo(id, data);
+      $(target).collapse('show');
+    });
+  };
+  
+  const printinfo = (id, data) => {
+    $("#coinInfo-" + id).append(`
+    <div class="collapse" id="collapseExample">
+      <div class="card card-body">
+        <div>
+          <img src=${data.image.thumb} width=100/><br/>
+          <h5 class="card-text">coin name ${data.name}</h5>
+          <p class="card-text">
+            price in dollars
+            ${data.market_data.current_price.usd}$
+          </p>
+          <p class="card-text">
+            price in euros ${data.market_data.current_price.eur}€
+          </p>
+          <p class="card-text">
+            price in
+            shekels ${data.market_data.current_price.ils}₪
+          </p>
+        </div>
+      </div>
+    </div>
+    `);
+  };
 
+   

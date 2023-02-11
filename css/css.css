@@ -6,17 +6,17 @@
     border-bottom: 2px solid black;
     background-image: url(/img/cryptowolf.jpg);
     background-repeat:no-repeat;
-    background-size: 150px;
+    background-size: 140px;
     background-position-x: right;
     background-position-y: 20px;
 }
 .navbarWrap{
-   display: flex;
-   justify-content: center;
-   flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
-.searchWrap{
-    margin-left: 170px;
+#searchWrap{
+    margin-left: 20%;
 }
 #container{
     display: flex;
@@ -26,8 +26,7 @@
 .parallax {
     
     background-image: url(/img/cryptoparallaxscroll.jpg);
-    min-height: 400px; 
-  
+    min-height: 500px; 
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -38,4 +37,6 @@
       background-attachment: scroll;
     }
   }
-
+.loading{
+    background-image: url(/img/loadingscreen.gif);
+}
