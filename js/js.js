@@ -31,18 +31,18 @@ const getData = () => {
 const printinfo = (id, data) => {
   $("#coinInfo-" + id).append(`
         <div>
-          <img src=${allCoinsInfo.image.thumb} width=100/><br/>
+          <img src=${data.image.thumb} width=100/><br/>
           <h5 class="card-text">coin name ${data.name}</h5>
           <p class="card-text">
             price in dollars
-            ${allCoinsInfo.market_data.current_price.usd}$
+            ${data.market_data.current_price.usd}$
           </p>
           <p class="card-text">
-            price in euros ${allCoinsInfo.market_data.current_price.eur}€
+            price in euros ${data.market_data.current_price.eur}€
           </p>
           <p class="card-text">
             price in
-            shekels ${allCoinsInfo.market_data.current_price.ils}₪
+            shekels ${data.market_data.current_price.ils}₪
           </p>
         </div>
       </div>
