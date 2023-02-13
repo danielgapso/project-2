@@ -1,5 +1,5 @@
 const coinUrl = "https://api.coingecko.com/api/v3/coins/list";
-const infoUrl = "https://api.coingecko.com/api/v3/coins/{id}";
+//const infoUrl = "https://api.coingecko.com/api/v3/coins/{id}";
 
 let allCoins = [];
 
@@ -66,3 +66,4 @@ const getCoinInfo = id => {
     });
   }
 };
+

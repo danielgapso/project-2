@@ -6,8 +6,8 @@ const getData = () => {
     <div class="card" style="width: 18rem">
       <div class="card-body">
         <div class="form-check form-switch" id="addSwitch">
-          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-          <label class="form-check-label mb-3" for="flexSwitchCheckDefault">add to watch list</label>
+        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" 
+        onclick="addToWatchList(this, '${allCoins[counter].id}')">
         </div>
         <h5 class="card-title">${allCoins[counter].symbol}</h5>
         <p class="card-text">${allCoins[counter].id}</p>
