@@ -24,7 +24,6 @@
     margin: auto;
 }
 .parallax {
-    
     background-image: url(/img/cryptoparallaxscroll.jpg);
     min-height: 500px; 
     background-attachment: fixed;
@@ -56,4 +55,12 @@ left: 200px;
      position: fixed; 
      top: 50%; 
      left: 50%;
+}
+#about{
+    background-color: gainsboro;
+    background-image: url(/img/ME.jpeg);
+    background-size: 120px;
+    background-repeat:no-repeat;
+    background-position-x: right;
+    background-position-y: 20px;
 }

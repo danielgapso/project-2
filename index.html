@@ -19,8 +19,8 @@
     <script defer src="js/switch.js"></script>
   </head>
   <body>
-    <div class="header">
-      <h1>the wolf of crypto</h1>
+    <div class="header" id="home">
+      <h1>The WOLF of coinstreet</h1>
     </div>
     <div class="navbarWrap">
       <nav
@@ -28,15 +28,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active" id="homeBtn">
-              <a href="#" class="btn btn-primary" type="submit">home</a>
+              <a href="#home" class="btn btn-primary" type="submit">home</a>
             </li>
             <li class="nav-item" id="linkBtn">
-              <button class="btn text-primary" type="submit">
-                live reports
-              </button>
+              <a href="#liveCharts" class="btn text-primary" type="submit">live reports</a>
             </li>
             <li class="nav-item" id="aboutBtn">
-              <button class="btn text-primary" type="submit">about</button>
+              <a href="#about" class="btn text-primary" type="submit">about</a>
             </li>
             <li id="searchWrap">
                 <div class="input-group" id="searchInput">
@@ -82,9 +80,15 @@
     </div>
 
     <div id="container"></div>
-     
-   
 
-    <div class="parallax"></div>
+    <div id="liveCharts"></div>
+
+    <div id="about">
+    <div>
+      <h2>About me</h2>
+      <p>My name is Daniel Gapso</p>
+      <p>This is a project that shows crypto Currency data and real time stats using ajax</p>
+    </div>
+    </div>
   </body>
 </html>

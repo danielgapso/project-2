@@ -1,6 +1,7 @@
-const getData = () => {
-  $("#container").html("");
-  for (let counter = 0; counter < 100; counter++) {
+const getData = () => {//this function shows the cards with the info for each card
+  $("#container").html("");//sets the container div as empty string
+  for (let counter = 0; counter < 100; counter++) {//one loop to show 100 cards
+    //the cards are shown by using bootstrap cards it presents them with unique id for each card and their data
     $("#container").append(`
     <div class="Box" id="box-${allCoins[counter].id}">
     <div class="card" style="width: 18rem">
@@ -28,7 +29,8 @@ const getData = () => {
   }
 };
 
-const printinfo = (id, data) => {
+const printinfo = (id, data) => {//when more info is click this function is called it gets the id of the clicked card and the data
+  //it will be showen in the card by its info and id using html 
   $("#coinInfo-" + id).append(`
         <div>
           <img src=${data.image.thumb} width=100/><br/>
