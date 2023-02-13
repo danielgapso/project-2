@@ -22,6 +22,7 @@
     display: flex;
     flex-wrap: wrap;
     margin: auto;
+    background-color: gainsboro;
 }
 .parallax {
     background-image: url(/img/cryptoparallaxscroll.jpg);
@@ -63,4 +64,7 @@ left: 200px;
     background-repeat:no-repeat;
     background-position-x: right;
     background-position-y: 20px;
+}
+#liveCharts{
+    background-color: gainsboro;
 }
