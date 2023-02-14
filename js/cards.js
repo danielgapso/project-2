@@ -2,6 +2,7 @@ const getData = () => {//this function shows the cards with the info for each ca
   $("#container").html("");//sets the container div as empty string
   for (let counter = 0; counter < 100; counter++) {//one loop to show 100 cards
     //the cards are shown by using bootstrap cards it presents them with unique id for each card and their data
+    //each card has a switch button that gives you the ability to add that card to the watch list
     $("#container").append(`
     <div class="Box" id="box-${allCoins[counter].id}">
     <div class="card" style="width: 18rem">
