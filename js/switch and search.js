@@ -7,7 +7,12 @@ const addToWatchList = (checkbox, id) => {
       } else {
         $("#watchList").html("");
         watchList.forEach(coinId => {
-          $("#watchList").append(`<li>${coinId}</li>`);
+          $("#watchList").append(`
+          <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+          <label class="form-check-label" for="flexSwitchCheckChecked">${coinId}</label>
+        </div>
+          `);
         });
         $("#watchListModal").modal("show");
         checkbox.checked = false;
