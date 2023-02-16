@@ -1,29 +1,35 @@
 let watchList=[];
 
 const addToWatchList = (checkbox, id) => {
-    if (checkbox.checked) {
-      if (watchList.length < 5) {
-        watchList.push(id);
-      } else {
-        $("#watchList").html("");
-        watchList.forEach(coinId => {
-          $("#watchList").append(`
-          <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
-          <label class="form-check-label" for="flexSwitchCheckChecked">${coinId}</label>
-        </div>
-          `);
-        });
-        $("#watchListModal").modal("show");
-        checkbox.checked = false;
-      }
+  const modalCheckbox = document.querySelector(`#coin-${id}`);
+  
+  if (checkbox.checked) {
+    if (watchList.length < 5) {
+      watchList.push(id);
     } else {
-      let index = watchList.indexOf(id);
-      if (index > -1) {
-        watchList.splice(index, 1);
-      }
+      $("#watchList").html("");
+      watchList.forEach(coinId => {
+        $("#watchList").append(`
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="coin-${coinId}" data-id="${coinId}" checked>
+            <label class="form-check-label" for="coin-${coinId}">${coinId}</label>
+          </div>
+        `);
+      });
+      $("#watchListModal").modal("show");
+      checkbox.checked = false;
     }
-  };
+  } else {
+    let index = watchList.indexOf(id);
+    if (index > -1) {
+      watchList.splice(index, 1);
+    }
+  }
+
+  if (modalCheckbox) {
+    modalCheckbox.checked = checkbox.checked;
+  }
+};
   
 
   const search = () => {
