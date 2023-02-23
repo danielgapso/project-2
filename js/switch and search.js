@@ -11,7 +11,7 @@ const addToWatchList = (checkbox, id) => {
       watchList.forEach(coinId => {
         $("#watchList").append(`
           <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="coin-${coinId}" data-id="${coinId}" checked>
+            <input class="form-check-input" type="checkbox" role="switch" id="coin-${coinId}" data-id="${coinId}">
             <label class="form-check-label" for="coin-${coinId}">${coinId}</label>
           </div>
         `);
@@ -35,7 +35,7 @@ const addToWatchList = (checkbox, id) => {
   const search = () => {
     const searchValue = $('input[name="search"]').val();//get the search field value
     const filteredCoins = allCoins.filter(coin =>//filter the array by the searched value
-       coin.id.includes(searchValue));
+       coin.symbol.includes(searchValue));
     $("#container").html("");//reset the container div
     filteredCoins.forEach(coin => {//check each coin if the value matches the search
       //show the card or cards by the search

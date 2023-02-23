@@ -22,6 +22,7 @@
     <div class="header" id="home">
       <h1>The wolf of crypto</h1>
     </div>
+    <div class="parallax"></div>
     <div class="navbarWrap">
       <nav
         class="navbar navbar-expand navbar-light bg-light justify-content-between">
@@ -54,32 +55,30 @@
         </div>
       </nav>
     </div>
-    <div class="parallax"></div>
 
     <div id="loadingGif" >
       <img src="/img/loadingscreen.gif" />
     </div>
 
 
-    <div class="modal" tabindex="-1" id="watchListModal">
-      <div class="modal-dialog">
+    <div class="modal fade" id="watchListModal" tabindex="-1" aria-labelledby="watchListModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="watchListModalLabel">Watch List</h5>
+            <h5 class="modal-title" id="watchListModalLabel">Watchlist</h5
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            
             <ul id="watchList"></ul>
-            
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+            <button type="button" class="btn btn-primary" id="saveWatchListBtn">Save changes</button>
           </div>
         </div>
       </div>
     </div>
+    
     
     <div id="container"></div>
 

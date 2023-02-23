@@ -10,7 +10,6 @@ const getData = () => {//this function shows the cards with the info for each ca
       <div class="form-check form-switch" id="addSwitch">
       <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" 
       onclick="addToWatchList(this, '${allCoins[counter].id}', document.querySelector('#coin-${allCoins[counter].id}'))">
-      <label class="form-check-label" for="flexSwitchCheckDefault">Watch</label>
     </div>
         <h5 class="card-title">${allCoins[counter].symbol}</h5>
         <p class="card-text">${allCoins[counter].id}</p>
