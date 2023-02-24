@@ -16,7 +16,6 @@ const getCoinInfo = (id) => {
   const cacheExpireTime = 2 * 60 * 1000;
   $("#coinInfo-" + id).html("");
   $("#loadingGif").css("display", "block");
-
   if ("caches" in window) {
     caches.match(url).then((response) => {
       if (response) {

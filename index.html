@@ -14,58 +14,52 @@
       integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
       crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/css.css" />
+    <script defer src="js/navigation.js"></script>
     <script defer src="js/api calls.js"></script>
     <script defer src="js/cards.js"></script>
     <script defer src="js/switch and search.js"></script>
   </head>
   <body>
     <div class="header" id="home">
-      <h1>The wolf of crypto</h1>
-    </div>
-    <div class="parallax"></div>
-    <div class="navbarWrap">
-      <nav
-        class="navbar navbar-expand navbar-light bg-light justify-content-between">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active" id="homeBtn">
-              <a href="#home" class="btn btn-primary" type="submit">home</a>
-            </li>
-            <li class="nav-item" id="linkBtn">
-              <a href="#liveCharts" class="btn text-primary" type="submit">live reports</a>
-            </li>
-            <li class="nav-item" id="aboutBtn">
-              <a href="#about" class="btn text-primary" type="submit">about</a>
-            </li>
-            <form id="searchWrap" action="javascript:search()">
-                <div class="input-group" id="searchInput">
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Search"
-                    name="search"/>
-                  <div class="input-group-btn">
-                    <button class="btn btn-outline-success" type="submit">
-                      search
-                    </button>
-                  </div>
-                </div>
-            </form>
-          </ul>
-        </div>
-      </nav>
+      <h1>The wolf of crypto🐺</h1>
     </div>
 
+    <div class="navbarWrap">
+      <nav class="navbar navbar-expand navbar-light bg-light justify-content-between">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a href="#" class="btn btn-primary" id="homeBtn">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="btn text-primary" id="liveChartsBtn">Live Charts</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="btn text-primary" id="aboutBtn">About</a>
+          </li>
+        </ul>
+      </nav>
+      <form id="searchWrap" action="javascript:search()">
+        <div class="input-group " id="searchInput">
+          <input
+            type="text" class="form-control" placeholder="Search" name="search"/>
+          <div class="input-group-btn">
+            <button class="btn btn-outline-success" type="submit">
+              search
+            </button>
+          </div>
+        </div>
+    </form>
+    
+    </div>
     <div id="loadingGif" >
       <img src="/img/loadingscreen.gif" />
     </div>
 
-
-    <div class="modal fade" id="watchListModal" tabindex="-1" aria-labelledby="watchListModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
+    <div class="modal" tabindex="-1" id="watchListModal">
+      <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="watchListModalLabel">Watchlist</h5
+            <h5 class="modal-title" id="watchListModalLabel">Watch List</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
@@ -79,11 +73,12 @@
       </div>
     </div>
     
-    
     <div id="container"></div>
 
     <div id="liveCharts">
       <h2>live charts</h2>
+     <div id="chartsContinter">
+     </div>
     </div>
 
     <div id="about">
