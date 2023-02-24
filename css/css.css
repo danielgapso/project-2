@@ -8,7 +8,6 @@ body {
     height: 100%;
     overflow-y: scroll;
     overflow-x: hidden;
-    perspective: 1px;
 }
 #home {
     background-image: url("/img/parralllax.jpg");
@@ -41,11 +40,12 @@ h1{
     padding-left: 17%;
 }
 #loadingGif {
-    position: absolute;
+    position: fixed; 
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 9999;
+    display:none;
   }
 
 #flexSwitchCheckDefault{
@@ -54,12 +54,7 @@ h1{
     height: 20px;
     left: 200px;
 }
-#loadingGif{
-    display:none;
-     position: fixed; 
-     top: 50%; 
-     left: 50%;
-}
+
 #about{
     background-image: url(/img/ME.jpeg);
     background-size: 120px;
