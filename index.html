@@ -28,23 +28,23 @@
       <nav class="navbar navbar-expand navbar-light bg-light justify-content-between">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a href="#" class="btn btn-primary" id="homeBtn">Home</a>
+            <a href="#" class="btn btn-primary" id="homeBtn">Home🏠</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="btn text-primary" id="liveChartsBtn">Live Charts</a>
+            <a href="#" class="btn text-primary" id="liveChartsBtn">Live Charts📈</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="btn text-primary" id="aboutBtn">About</a>
+            <a href="#" class="btn text-primary" id="aboutBtn">About📖</a>
           </li>
         </ul>
       </nav>
       <form id="searchWrap" action="javascript:search()">
         <div class="input-group " id="searchInput">
           <input
-            type="text" class="form-control" placeholder="Search" name="search"/>
+            type="text" class="form-control" placeholder="Search a coin ..." name="search"/>
           <div class="input-group-btn">
             <button class="btn btn-outline-success" type="submit">
-              search
+              search🔎
             </button>
           </div>
         </div>
@@ -59,15 +59,15 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="watchListModalLabel">Watch List</h5>
+            <h3 class="modal-title" id="watchListModalLabel">Watch List🔬</h3>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
+            <h5>please choose which coin to remove ...</h5>
             <ul id="watchList"></ul>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" id="saveWatchListBtn">Save changes</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close❌</button>
           </div>
         </div>
       </div>
@@ -78,6 +78,7 @@
     <div id="liveCharts">
       <h2>live charts</h2>
       <h4>you are watching those coins</h4>
+      <hr>
      <div id="chartsContinter">
      </div>
     </div>
@@ -85,8 +86,9 @@
     <div id="about">
     <div>
       <h2>About me</h2>
+      <hr>
       <p>My name is Daniel Gapso</p>
-      <p>This is a project that shows crypto Currency data and real time stats using ajax</p>
+      <p>This is a project that shows crypto Currency data and real time stats using jQuerry and Ajax</p>
     </div>
     </div>
   </body>

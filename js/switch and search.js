@@ -11,8 +11,8 @@ const addToWatchList = (checkbox, id) => {
         const isChecked = watchList.some((coin) => coin.id === coinId.id);
         $("#watchList").append(`
           <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="coin-${coinId.id}" data-id="${coinId.id}" ${isChecked ? "checked" : ""}>
-            <label class="form-check-label" for="coin-${coinId.id}">${coinId.id}</label>
+            🪙<input class="form-check-input" type="checkbox" role="switch" id="coin-${coinId.id}" data-id="${coinId.id}" ${isChecked ? "checked" : ""}>
+              <label class="form-check-label" for="coin-${coinId.id}">${coinId.id}</label>
           </div>
         `);
       });
@@ -52,8 +52,8 @@ const showWatched = (watchList = []) => {
     const html = `
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title">${coin.id}</h5>
-          <p class="card-text">${coin.name}</p>
+          <h5 class="card-title">Coin ID : ${coin.id}</h5>
+          <p class="card-text">Coin Name : ${coin.name}</p>
           <a href="#" class="btn btn-primary">Go to ${coin.id} chart</a>
         </div>
       </div>
