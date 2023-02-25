@@ -8,15 +8,31 @@ const addToWatchList = (checkbox, id) => {
     } else {
       $("#watchList").html("");
       watchList.forEach((coinId) => {
+        const isChecked = watchList.some((coin) => coin.id === coinId.id);
         $("#watchList").append(`
           <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" role="switch" id="coin-${coinId.id}" data-id="${coinId.id}">
+            <input class="form-check-input" type="checkbox" role="switch" id="coin-${coinId.id}" data-id="${coinId.id}" ${isChecked ? "checked" : ""}>
             <label class="form-check-label" for="coin-${coinId.id}">${coinId.id}</label>
           </div>
         `);
       });
       $("#watchListModal").modal("show");
       checkbox.checked = false;
+
+      // Add event listener to checkboxes in modal to update watchList
+      $("#watchListModal input[type='checkbox']").on("change", function() {
+        const id = $(this).data("id");
+        if (this.checked) {
+          watchList.push({ id: id, name: id });
+        } else {
+          let index = watchList.findIndex((coin) => coin.id === id);
+          if (index > -1) {
+            watchList.splice(index, 1);
+          }
+        }
+        console.log(watchList);
+        showWatched(watchList);
+      });
     }
   } else {
     let index = watchList.findIndex((coin) => coin.id === id);
@@ -31,6 +47,7 @@ const addToWatchList = (checkbox, id) => {
   showWatched(watchList); 
 };
 
+
 const showWatched = (watchList = []) => {
   $("#chartsContinter").html("");
   watchList.forEach((coin) => {
@@ -39,7 +56,7 @@ const showWatched = (watchList = []) => {
         <div class="card-body">
           <h5 class="card-title">${coin.id}</h5>
           <p class="card-text">${coin.name}</p>
-          <a href="#" class="btn btn-primary">Go to ${coin.id} Page</a>
+          <a href="#" class="btn btn-primary">Go to ${coin.id} chart</a>
         </div>
       </div>
     `;
