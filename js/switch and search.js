@@ -64,6 +64,10 @@ const showWatched = (watchList = []) => {
 
 const search = () => {
   const searchValue = $('input[name="search"]').val();//get the search field value
+  if (searchValue === '') {
+    window.location.reload(); // reload the page to return to the home screen
+    return; // exit the function
+  }
   const filteredCoins = allCoins.filter(coin => {//filter the array by the searched value
      return coin.symbol === searchValue;
   });
@@ -97,5 +101,6 @@ const search = () => {
   });
   $('input[name="search"]').val("");
 };
+
 
   
