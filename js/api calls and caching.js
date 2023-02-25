@@ -1,6 +1,6 @@
 const coinUrl = "https://api.coingecko.com/api/v3/coins/list";//first api to get all the coins
 const infoUrl = "https://api.coingecko.com/api/v3/coins/{id}";//secound api to get the coins data by its id
-//const topCoinsUrl="https://api.coingecko.com/api/v3/coins/markets?vs_currency=USD";
+const topCoinsUrl="https://api.coingecko.com/api/v3/coins/markets?vs_currency=USD";//top coins
 
 let allCoins = [];//an array of all the coins
 

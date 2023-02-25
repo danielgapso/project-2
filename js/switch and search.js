@@ -19,7 +19,6 @@ const addToWatchList = (checkbox, id) => {
       $("#watchListModal").modal("show");
       checkbox.checked = false;
 
-      // Add event listener to checkboxes in modal to update watchList
       $("#watchListModal input[type='checkbox']").on("change", function() {
         const id = $(this).data("id");
         if (this.checked) {
@@ -46,7 +45,6 @@ const addToWatchList = (checkbox, id) => {
   console.log(watchList);
   showWatched(watchList); 
 };
-
 
 const showWatched = (watchList = []) => {
   $("#chartsContinter").html("");
