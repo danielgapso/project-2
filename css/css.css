@@ -11,7 +11,7 @@ body {
     border: 1pc solid black;
 }
 #home {
-    background-image: url("/img/parralllax.jpeg");
+    background-image: url(../img/parralllax.jpeg);
     background-attachment: fixed;
 }
 h1{
@@ -56,7 +56,7 @@ h1{
 }
 
 #about{
-    background-image: url(/img/ME.jpeg);
+    background-image: url(../img/ME.jpeg);
     background-size: 120px;
     background-repeat:no-repeat;
     background-position-x: right;
