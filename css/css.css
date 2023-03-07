@@ -1,69 +1,69 @@
 html {
-    height: 100%;
-    overflow: hidden;
+  height: 100%;
+  overflow: hidden;
 }
-body { 
-    margin:0;
-    padding:0;
-    height: 100%;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    border: 1pc solid black;
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border: 1pc solid black;
 }
 #home {
-    background-image: url(../img/parralllax.jpeg);
-    background-attachment: fixed;
+  background-image: url(../img/parralllax.jpeg);
+  background-attachment: fixed;
 }
-h1{
-    padding-top:30%;
-    color: whitesmoke;
-    text-align: center;
+h1 {
+  padding-top: 30%;
+  color: whitesmoke;
+  text-align: center;
 }
 .header {
-    position: relative;
-    min-height: 100%;
-    width: 100%;
-    box-sizing: border-box;
-    background: 50% 50% / cover;
+  position: relative;
+  min-height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  background: 50% 50% / cover;
 }
-.navbarWrap{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-right: 10%;
+.navbarWrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-right: 10%;
 }
-#container{
-    display: flex;
-    flex-wrap: wrap;
-    margin: auto;
-    background-color:whitesmoke;
-    padding-left: 15%;
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  background-color: whitesmoke;
+  padding-left: 15%;
 }
 #loadingGif {
-    position: fixed; 
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 9999;
-    display:none;
-  }
-
-#flexSwitchCheckDefault{
-    position: relative;
-    width: 40px;
-    height: 20px;
-    left: 200px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  display: none;
 }
 
-#about{
-    background-image: url(../img/ME.jpeg);
-    background-size: 120px;
-    background-repeat:no-repeat;
-    background-position-x: right;
-    background-position-y: 20px;
+#flexSwitchCheckDefault {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  left: 200px;
 }
 
-#searchWrap{
-    padding-left: 100px;
-    padding-top: 7px;
+#about {
+  background-image: url(../img/ME.jpeg);
+  background-size: 120px;
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: 20px;
+}
+
+#searchWrap {
+  padding-left: 100px;
+  padding-top: 7px;
 }

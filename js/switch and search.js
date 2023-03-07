@@ -11,15 +11,20 @@ const addToWatchList = (checkbox, id) => {
         const isChecked = watchList.some((coin) => coin.id === coinId.id);
         $("#watchList").append(`
           <div class="form-check form-switch">
-            🪙<input class="form-check-input" type="checkbox" role="switch" id="coin-${coinId.id}" data-id="${coinId.id}" ${isChecked ? "checked" : ""}>
-              <label class="form-check-label" for="coin-${coinId.id}">${coinId.id}</label>
+            🪙<input class="form-check-input" type="checkbox" role="switch" id="coin-${
+              coinId.id
+            }" data-id="${coinId.id}" 
+            ${isChecked ? "checked" : ""}>
+              <label class="form-check-label" for="coin-${coinId.id}">${
+          coinId.id
+        }</label>
           </div>
         `);
       });
       $("#watchListModal").modal("show");
       checkbox.checked = false;
 
-      $("#watchListModal input[type='checkbox']").on("change", function() {
+      $("#watchListModal input[type='checkbox']").on("change", function () {
         const id = $(this).data("id");
         if (this.checked) {
           watchList.push({ id: id, name: id });
@@ -43,7 +48,7 @@ const addToWatchList = (checkbox, id) => {
     modalCheckbox.checked = checkbox.checked;
   }
   console.log(watchList);
-  showWatched(watchList); 
+  showWatched(watchList);
 };
 
 const showWatched = (watchList = []) => {
@@ -63,16 +68,18 @@ const showWatched = (watchList = []) => {
 };
 
 const search = () => {
-  const searchValue = $('input[name="search"]').val();//get the search field value
-  if (searchValue === '') {
-    window.location.href = '/'; // reload the page to return to the home screen
+  const searchValue = $('input[name="search"]').val(); //get the search field value
+  if (searchValue === "") {
+    window.location.href = "/"; // reload the page to return to the home screen
     return; // exit the function
   }
-  const filteredCoins = allCoins.filter(coin => {//filter the array by the searched value
-     return coin.symbol === searchValue;
+  const filteredCoins = allCoins.filter((coin) => {
+    //filter the array by the searched value
+    return coin.symbol === searchValue;
   });
-  $("#container").html("");//reset the container div
-  filteredCoins.forEach(coin => {//check each coin if the value matches the search
+  $("#container").html(""); //reset the container div
+  filteredCoins.forEach((coin) => {
+    //check each coin if the value matches the search
     //show the card or cards by the search
     $("#container").append(`
     <div class="Box" id="box-${coin.id}">
@@ -101,6 +108,3 @@ const search = () => {
   });
   $('input[name="search"]').val("");
 };
-
-
-  
