@@ -6,7 +6,7 @@ let allCoins = []; //an array of all the coins
 
 $(document).ready(function () {
   //when document ready execute the function
-  $.get(coinUrl).done(function (data) {
+  $.get(topCoinsUrl).done(function (data) {
     //get the url and when done present the data
     allCoins = data; //the data that returned from the call
     getData(); //invoke the function to show the coins in the cards
