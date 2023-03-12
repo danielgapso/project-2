@@ -50,9 +50,9 @@ const addToWatchList = (checkbox, id) => {// a function that will add a coin tha
   showWatched(watchList);
 };
 
-const showWatched = (watchList = []) => {
+const showWatched = (watchList = []) => {//a function that shown the selected coins in the watch list array 
   $("#chartsContinter").html("");
-  watchList.forEach((coin) => {
+  watchList.forEach((coin) => {//it will show the passed parameters
     const html = `
       <div class="card">
         <div class="card-body">
