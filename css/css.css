@@ -46,15 +46,18 @@ h1 {
   transform: translate(-50%, -50%);
   z-index: 9999;
   display: none;
+  background-image: url(../img/loadingscreen.gif);
+  width: 450px;
+  height: 450px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
-
 #flexSwitchCheckDefault {
   position: relative;
   width: 40px;
   height: 20px;
   left: 200px;
 }
-
 #about {
   background-image: url(../img/ME.jpeg);
   background-size: 120px;
@@ -62,7 +65,6 @@ h1 {
   background-position-x: right;
   background-position-y: 20px;
 }
-
 #searchWrap {
   padding-left: 100px;
   padding-top: 7px;
