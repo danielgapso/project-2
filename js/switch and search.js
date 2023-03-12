@@ -1,10 +1,10 @@
-let watchList = [];
+let watchList = [];//an array of the watched coins
 
-const addToWatchList = (checkbox, id) => {
+const addToWatchList = (checkbox, id) => {// a function that will add a coin that was switched on to the watch list
   const modalCheckbox = document.querySelector(`#coin-${id}`);
   if (checkbox.checked) {
-    if (watchList.length < 5) {
-      watchList.push({ id: id, name: id });
+    if (watchList.length < 5) {//the array is limited to 5 coins 
+      watchList.push({ id: id, name: id });//the passed parametars are coins id and coins name to be showen in show watched function
     } else {
       $("#watchList").html("");
       watchList.forEach((coinId) => {
@@ -20,10 +20,9 @@ const addToWatchList = (checkbox, id) => {
         }</label>
           </div>
         `);
-      });
+      });//shows the modal when the limit is exceeded
       $("#watchListModal").modal("show");
       checkbox.checked = false;
-
       $("#watchListModal input[type='checkbox']").on("change", function () {
         const id = $(this).data("id");
         if (this.checked) {
