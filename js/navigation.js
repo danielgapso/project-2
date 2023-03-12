@@ -1,3 +1,4 @@
+//the navigation bar to show each of the sections when clicked and hide others accordingly
 $(document).ready(function () {
   const homeBtn = $("#homeBtn");
   const liveChartsBtn = $("#liveChartsBtn");

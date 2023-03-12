@@ -13,12 +13,12 @@ $(document).ready(function () {
   });
 });
 
-const getCoinInfo = (id) => {
-  const url = infoUrl.replace("{id}", id);
-  const cacheExpireTime = 2 * 60 * 1000;
+const getCoinInfo = (id) => {//a funcion that will replace {id} in the url with the clicked coin id
+  const url = infoUrl.replace("{id}", id);//the replacement 
+  const cacheExpireTime = 2 * 60 * 1000;//12000 miliseconds is 2 minutes
   $("#coinInfo-" + id).html("");
   $("#loadingGif").css("display", "block");
-  if ("caches" in window) {
+  if ("caches" in window) {//checks if cache exists and if so it will update the info according to the passed time
     caches.match(url).then((response) => {
       if (response) {
         const lastUpdated = new Date(
@@ -32,7 +32,7 @@ const getCoinInfo = (id) => {
           });
           return;
         }
-      }
+      }//if cache is not exists it will open a new one
       $.get(url, (data) => {
         $("#loadingGif").css("display", "none");
         printinfo(id, data);
