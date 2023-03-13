@@ -1,10 +1,12 @@
-let watchList = [];//an array of the watched coins
+let watchList = []; //an array of the watched coins
 
-const addToWatchList = (checkbox, id) => {// a function that will add a coin that was switched on to the watch list
+const addToWatchList = (checkbox, id) => {
+  // a function that will add a coin that was switched on to the watch list
   const modalCheckbox = document.querySelector(`#coin-${id}`);
   if (checkbox.checked) {
-    if (watchList.length < 5) {//the array is limited to 5 coins 
-      watchList.push({ id: id, name: id });//the passed parametars are coins id and coins name to be showen in show watched function
+    if (watchList.length < 5) {
+      //the array is limited to 5 coins
+      watchList.push({ id: id, name: id }); //the passed parametars are coins id and coins name to be showen in show watched function
     } else {
       $("#watchList").html("");
       watchList.forEach((coinId) => {
@@ -20,17 +22,22 @@ const addToWatchList = (checkbox, id) => {// a function that will add a coin tha
         }</label>
           </div>
         `);
-      });//shows the modal when the limit is exceeded
+      }); //shows the modal when the limit is exceeded
       $("#watchListModal").modal("show");
       checkbox.checked = false;
       $("#watchListModal input[type='checkbox']").on("change", function () {
         const id = $(this).data("id");
-        if (this.checked) {
-          watchList.push({ id: id, name: id });
-        } else {
+        // remove coin from watchList array and update card switch state
+        if (!this.checked) {
           let index = watchList.findIndex((coin) => coin.id === id);
           if (index > -1) {
             watchList.splice(index, 1);
+          }
+          const cardSwitch = document.querySelector(
+            `#box-${id} .form-check-input`
+          );
+          if (cardSwitch) {
+            cardSwitch.checked = false;
           }
         }
         console.log(watchList);
@@ -50,15 +57,16 @@ const addToWatchList = (checkbox, id) => {// a function that will add a coin tha
   showWatched(watchList);
 };
 
-const showWatched = (watchList = []) => {//a function that shown the selected coins in the watch list array 
+const showWatched = (watchList = []) => {
+  //a function that shown the selected coins in the watch list array
   $("#chartsContinter").html("");
-  watchList.forEach((coin) => {//it will show the passed parameters
+  watchList.forEach((coin) => {
+    //it will show the passed parameters
     const html = `
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title">Coin ID : ${coin.id}</h5>
-          <p class="card-text">Coin Name : ${coin.name}</p>
-          <a href="#" class="btn btn-primary">Go to ${coin.id} chart</a>
+          <h3 class="card-title">Coin ID : ${coin.id}</h3>
+          <h4 class="card-text">Coin Name : ${coin.name}</h4>
         </div>
       </div>
     `;

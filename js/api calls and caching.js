@@ -1,6 +1,7 @@
 const coinUrl = "https://api.coingecko.com/api/v3/coins/list"; //first api to get all the coins
 const infoUrl = "https://api.coingecko.com/api/v3/coins/{id}"; //secound api to get the coins data by its id
-const topCoinsUrl = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=USD"; //top coins
+const topCoinsUrl =
+  "https://api.coingecko.com/api/v3/coins/markets?vs_currency=USD"; //top coins
 
 let allCoins = []; //an array of all the coins
 
@@ -13,12 +14,14 @@ $(document).ready(function () {
   });
 });
 
-const getCoinInfo = (id) => {//a funcion that will replace {id} in the url with the clicked coin id
-  const url = infoUrl.replace("{id}", id);//the replacement 
-  const cacheExpireTime = 2 * 60 * 1000;//12000 miliseconds is 2 minutes
+const getCoinInfo = (id) => {
+  //a funcion that will replace {id} in the url with the clicked coin id
+  const url = infoUrl.replace("{id}", id); //the replacement
+  const cacheExpireTime = 2 * 60 * 1000; //12000 miliseconds is 2 minutes
   $("#coinInfo-" + id).html("");
   $("#loadingGif").css("display", "block");
-  if ("caches" in window) {//checks if cache exists and if so it will update the info according to the passed time
+  if ("caches" in window) {
+    //checks if cache exists and if so it will update the info according to the passed time
     caches.match(url).then((response) => {
       if (response) {
         const lastUpdated = new Date(
@@ -32,7 +35,7 @@ const getCoinInfo = (id) => {//a funcion that will replace {id} in the url with 
           });
           return;
         }
-      }//if cache is not exists it will open a new one
+      } //if cache is not exists it will open a new one
       $.get(url, (data) => {
         $("#loadingGif").css("display", "none");
         printinfo(id, data);
